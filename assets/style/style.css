@@ -1,1 +1,14 @@
 /* BASIC STYLES HERE */
+
+
+.takespace{
+    min-width: 20vw;
+    min-height: 20vh;
+    background-color: rgba(0, 128, 128, .2);
+}
+
+.bg{
+    background-size: cover;
+    background-position: center, top;
+    
+}
