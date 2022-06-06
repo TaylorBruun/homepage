@@ -11,7 +11,7 @@ export class Todo{
 
     get Template(){
         return`
-        <h5 id="${this.id}" class="todo ${this.completed ? 'text-decoration-line-through' : ''}"><span class='selectable' onclick="app.todosController.updateTodo('${this.id}', ${this.completed})">${this.description}</span><button onclick="app.todosController.deleteTodo('${this.id}')" class="btn btn-danger">del</button></h5>
+        <h5 id="${this.id}" class="p-1 text ${this.completed ? 'text-decoration-line-through' : ''}"><span class='selectable' onclick="app.todosController.updateTodo('${this.id}', ${this.completed})">${this.description}</span><button onclick="app.todosController.deleteTodo('${this.id}')" class="m-2 mdi mdi-delete btn btn-danger"></button></h5>
         `
     }
 }

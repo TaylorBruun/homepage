@@ -4,11 +4,40 @@
 .takespace{
     min-width: 20vw;
     min-height: 20vh;
-    background-color: rgba(0, 128, 128, .2);
+    /* background-color: rgba(0, 128, 128, .2); */
+    backdrop-filter: blur(3px); 
+}
+
+.fullscreen{
+    min-height: 100vh;
 }
 
 .bg{
     background-size: cover;
     background-position: center, top;
     
+}
+.time{
+    flex: 1;
+    min-height: 50vh;
+   
+}
+
+.text{
+    color: whitesmoke;
+    text-shadow: 1px 1px 0 #000000;
+}
+
+.weather-text{
+    cursor: pointer
+}
+
+.author{
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+
+.quote:hover>.author{
+    opacity: 1;
 }

@@ -8,14 +8,32 @@
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-     <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css'>
+  <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css'>
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>homepage</title>
+
+  <style>
+    body.debug .container,
+    body.debug .container-fluid {
+      outline: 2px double blue;
+      outline-offset: -2px;
+    }
+  
+    body.debug .row {
+      outline: 2px dashed red;
+      outline-offset: -2px;
+    }
+  
+    body.debug [class*="col-"] {
+      outline: 2px dotted forestgreen;
+      outline-offset: -3px;
+    }
+  </style>
 </head>
 
 <body class="bg">
-  <header>
+  <!-- <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
       <a class="navbar-brand ms-3" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
@@ -23,55 +41,67 @@
         <span class="ms-2">homepage</span>
       </a>
     </nav>
-  </header>
+  </header> -->
   <main>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
+    <div class="container-fluid fullscreen d-flex flex-column">
+      
 
 
-          <div id="">
-<h2 id="time" class="display-2 text-primary">
-  It is <br>
-  party time <br>
-  (o'clock)
-
-</h2>
-          </div>
-          <div id="weather">
-
-            
-          </div>
-
-
-
-          <div id="" class="takespace">
-            <form onsubmit="app.todosController.createTodo()" action="">
-              <input required type="text" name="todo" id="todo">
-              <button class="mdi mdi-plus"></button>
-            </form>
-            <div id="todos">
-              <h5 id="item-1" class="todo">Todo item no. 1 <button class="btn btn-danger">del</button></h5>
-              <h5 id="item-2" class="todo">An additional todo item <button class="btn btn-danger">del</button></h5>
-              <h5 id="item-3" class="todo">Todo item C. <button class="btn btn-danger">del</button></h5>
+          <row class="d-flex flex-column align-items-end">
+            <div id="weather">
+              <h4 class="text"></h4>
             </div>
-          
-          </div>
-          <div id="quotes"></div>
-          
-          
+          </row>
 
-        </div>
-      </div>
+          <row class="d-flex time align-items-center justify-content-center text-center flex-column">
+            <div id="">
+              <h2 id="time" class="align-items-center justify-content-center text-center display-2 text">
+              </h2>
+            </div>
+          </row>
+
+          <row class="d-flex flex-row align-items-between align-items-end">
+<div class="col-4">
+  <div id="quotes" class="">
+    <h4 class="text"></h4>
+    <h6 id="" class="author text"></h6>
+  </div>
+
+</div>
+
+<div class="col-3">
+
+</div>
+
+<div class="col-5">
+
+  <div id="" class="takespace">
+    <form onsubmit="app.todosController.createTodo()" action="">
+      <span id="count" class=" fs-5 text">0/10</span>
+      <input required type="text" name="todo" id="todo" placeholder="Enter new task" >
+      <button class="btn btn-light mdi mdi-plus"></button>
+    </form>
+    <div id="todos">
+      <h5 id="item-1" class="todo"> <button class="btn btn-danger"></button></h5>
+      <h5 id="item-2" class="todo"> <button class="btn btn-danger"></button></h5>
+      <h5 id="item-3" class="todo"><button class="btn btn-danger"></button></h5>
+    </div>
+  </div>
+</div>
+          </row>
+
+
+
+       
     </div>
   </main>
-  <footer class="bg-dark text-light">
+  <!-- <footer class="bg-dark text-light">
     <div class="text-center no-select">
       <p><small>Made with 💖 by Codeworks</small></p>
     </div>
-  </footer>
+  </footer> -->
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>

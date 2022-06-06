@@ -6,6 +6,13 @@ function _drawTodos(){
     let template = ''
     ProxyState.todos.forEach(t => template += t.Template)
     document.getElementById('todos').innerHTML = template
+    let todosLeft = 0
+    ProxyState.todos.forEach(t => {
+        if (!t.completed) {
+            todosLeft++
+        }
+    })
+    document.getElementById('count').innerText = `${todosLeft}/${ProxyState.todos.length}`
     // console.log('drawing!');
 }
 
@@ -21,7 +28,10 @@ export class TodosController {
             let input = window.event.target.todo.value
             console.log('input in controller is ', input);
             await todosService.createTodo(input)
-            window.event.target.reset()
+            
+            // TODO figure out how to reset the form
+            // window.event.target.todo.reset()
+            
         } catch (error) {
             console.error(error)
             Pop.toast(error.message, 'error')
@@ -48,11 +58,14 @@ export class TodosController {
     }
 
     async deleteTodo(id){
-        try {
-            await todosService.deleteTodo(id)
-        } catch (error) {
-            console.error(error)
-            Pop.toast(error.message, 'error')
+        if (await Pop.confirm("Are you sure you want to delete this task?")){
+
+            try {
+                await todosService.deleteTodo(id)
+            } catch (error) {
+                console.error(error)
+                Pop.toast(error.message, 'error')
+            }
         }
     }
 
